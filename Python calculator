@@ -1,18 +1,18 @@
-def add(a, b):
+def add(a, b):  # Adds two numbers.
     return a + b
 
-def subtract(a, b):
+def subtract(a, b):  # Subtracts the second number from the first.
     return a - b
 
-def multiply(a, b):
+def multiply(a, b):  # Multiplies two numbers.
     return a * b
 
-def divide(a, b):
-    if b == 0:
+def divide(a, b):  # Divides the first number by the second.
+    if b == 0:  # Handles division by zero.
         return "Error! Division by zero."
     return a / b
 
-def calculator():
+def calculator():  # Main function to run the calculator.
     print("Simple Calculator")
     print("Select an operation:")
     print("1. Add")
@@ -20,14 +20,15 @@ def calculator():
     print("3. Multiply")
     print("4. Divide")
 
-    while True:
+    while True:  # Runs the calculator in a loop.
         choice = input("Enter choice (1/2/3/4): ")
         
-        if choice in ['1', '2', '3', '4']:
+        if choice in ['1', '2', '3', '4']:  # Checks for a valid operation.
             try:
-                num1 = float(input("Enter first number: "))
-                num2 = float(input("Enter second number: "))
+                num1 = float(input("Enter first number: "))  # Takes first number input.
+                num2 = float(input("Enter second number: "))  # Takes second number input.
 
+                # Performs operation based on user choice.
                 if choice == '1':
                     print(f"The result is: {add(num1, num2)}")
                 elif choice == '2':
@@ -36,15 +37,17 @@ def calculator():
                     print(f"The result is: {multiply(num1, num2)}")
                 elif choice == '4':
                     print(f"The result is: {divide(num1, num2)}")
-            except ValueError:
+            except ValueError:  # Handles non-numeric input.
                 print("Invalid input! Please enter numeric values.")
         else:
-            print("Invalid choice! Please select a valid operation.")
+            print("Invalid choice! Please select a valid operation.")  # Invalid operation choice.
 
+        # Asks if the user wants to perform another operation.
         another = input("Do you want to perform another operation? (yes/no): ").lower()
-        if another != 'yes':
+        if another != 'yes':  # Exits the loop if the answer is not "yes".
             print("Goodbye!")
             break
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # Ensures the calculator runs when the script is executed.
     calculator()
+
